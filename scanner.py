@@ -14,7 +14,7 @@ class CrlfScanner():
     APPEND_LIST = ["", "crlf", "?crlf=", "#"]
 
     # List of escape sequences that possibly result in crlf.
-    ESCAPE_LIST = ['%0d','%0a', '%0d%0a', '%23%0d', '%23%0a', '%23%0d%0a']
+    ESCAPE_LIST = ['%u000A','%0d','%0a', '%0d%0a', '%23%0d', '%23%0a', '%23%0d%0a','%0a%20','%20%0a','%E5%98%8A%E5%98%8D','%E5%98%8A%E5%98%8D%0A','%3f%0a','\r\n',' \r\n','\r\n ','%5cr%5cn','%25250A','%%0A0A','%25%30A']
 
     # By default, the scanner will try to inject a Set-Cookie statment.
     DEFAULT_INJ = "Set-Cookie:param=crlf;"
